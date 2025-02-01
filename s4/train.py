@@ -259,7 +259,7 @@ def example_train(dataset: str, layer: str, seed: int, model: DictConfig, train:
 
         if train.checkpoint:
             suf = f"-{train.suffix}" if train.suffix is not None else ""
-            run_id = f"checkpoints/{dataset}/{layer}-d_model={model.d_model}-lr={train.lr}-bsz={train.batch_size}{suf}"
+            run_id = f"checkpoints/{dataset}/{layer}{suf}"
 
             abs_path = os.path.join(os.getcwd(), run_id)
 
@@ -271,10 +271,10 @@ def example_train(dataset: str, layer: str, seed: int, model: DictConfig, train:
             )
 
         if (test_acc > best_acc) or (test_loss < best_loss):
-            if train.checkpoint:
-                shutil.copy(ckpt_path, f"{run_id}/best_{epoch}")
-                if os.path.exists(f"{run_id}/best_{best_epoch}"):
-                    os.remove(f"{run_id}/best_{best_epoch}")
+            # if train.checkpoint:
+            #     shutil.copy(ckpt_path, f"{run_id}/best_{epoch}")
+            #     if os.path.exists(f"{run_id}/best_{best_epoch}"):
+            #         os.remove(f"{run_id}/best_{best_epoch}")
 
             best_loss, best_acc, best_epoch = test_loss, test_acc, epoch
 

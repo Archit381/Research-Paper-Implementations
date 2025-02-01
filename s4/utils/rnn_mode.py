@@ -18,7 +18,7 @@ def discrete_DPLR(Lambda, P,Q,B,C,step, L):
 
     N = Lambda.shape[0]
 
-    A = np.diag(Lambda) - P[:, np.newaxis] @ Q[:, np.newaxsis].conj().T             # Construct A in DPLR form
+    A = np.diag(Lambda) - P[:, np.newaxis] @ Q[:, np.newaxis].conj().T             # Construct A in DPLR form
     I = np.eye(N)
 
     A0 = (2.0 / step)*I + A                                                         # Forward Euler
