@@ -30,7 +30,7 @@ SSMs can be represented as both CNN and RNN, allowing for parallel training and 
 
 We observe that during the matrix multiplications in state equations, we can pre-compute some matrices (or parameters) that control how information flows over time. This pre-computed matrice is also called SSM convolution kernel or filter. 
 
-![images](https://raw.githubusercontent.com/Archit381/Research-Paper-Implementations/refs/heads/main/s4/assets/ssm_equations.png)
+![images](https://raw.githubusercontent.com/Archit381/Research-Paper-Implementations/refs/heads/main/s4/assets/cnn_eqn.png)
 
 During training, these convolutions can be computed in parallel using FFT (fast fourier transform) and thus reduces the quadratic time complexity. These convolutions are applied in the Frequence Domain instead of step-by-step making them faster in training.
 
