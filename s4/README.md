@@ -1,63 +1,19 @@
 # Efficiently Modeling Long Sequences with Structured State Spaces
 
-This repository contains the implementation of the research paper **`Efficiently Modeling Long Sequences with Structured State Spaces`** along with my explaination about SSM and S4
+Since its introduction, Transformers have changed how feature representations are learned in deep learning models. The progress since has been immense where now transformers are the most reliable architecture to implement for a wide range of tasks involving image, text etc. The attention mechanism addressed the problem of traditional sequence models like simple RNNs, LSTMs not being able to handle long-range dependencies while also being slow in both training and inference due processing inputs in a linear manner.
 
-## Project Structure
+## How did Transformers fix problems of Sequence Models ?
 
-```plaintext
-s4/
-├── models/
-│   ├── batch_staacked_model.py
-│   └── s4_model.py
-├── utils/
-│   ├── cnn_mode.py
-│   ├── dataset.py
-│   ├── helper.py
-│   ├── hippo.py
-│   └── rnn_model.py
-├── config.yaml
-├── README.md
-├── s4_implementation.ipynb
-├── sample.py
-└── train.py
-```
+1. Tranformers introduced Self-Attention mechanism which basically computes attention weights for each token by considering its dependence with all the other tokens regardless of their position. This helps in addressing the limitation of simple RNNs and LSTMs not being able to capture long-range dependencies between tokens. In simple words, instead of the prediction only being influenced by only a few tokens, self-attention allows all the tokens to contribute in the prediction.
 
-## Getting Started
+![images](https://github.com/Archit381/Research-Paper-Implementations/tree/main/s4/assets/self_attention_diagram.png)
 
-Follow these steps to get the models ready for training:
+2. 
 
-### 1. Configuring the YAML File
 
-You can play around with the hyperparameters of the models and change the train config according to your need.
 
-Currently supported:
 
- - Only mnist dataset
- - Only s4 layer
 
-### 2. Creating a virtual environment for the repo
 
-Make sure you have Python & Poetry installed. Create and activate the virtual enviroment:
-
-```bash
-poetry init
-poetry shell
-```
-
-### 3. Installing Dependencies
-
-Install the project dependencies using:
-
-```bash
-poetry install
-```
-
-### 4. Model Training
-
-With all configs done, you can start the model training with following cmd:
-
-```bash
-python -m s4.train
-```
 
 
