@@ -79,7 +79,11 @@ We also use the Woodbury matrix identity that simplifies the inversion of a matr
 The matrix exponentiation now reduces to a simple exponentiation of diagonal terms making the computations much cheaper. It also allows for efficient pre-computation of state transitions (parameters).
 
 
+## References:
 
+ - https://srush.github.io/annotated-s4/
+ - https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-mamba-and-state
+ - https://arxiv.org/abs/2111.00396
 
 
 
