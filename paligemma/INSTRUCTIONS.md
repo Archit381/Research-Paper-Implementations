@@ -1,4 +1,4 @@
-# Paligemma - a vision language model in pytorch
+# PaliGemma: A versatile 3B VLM for transfer
 
 ## Getting Started
 

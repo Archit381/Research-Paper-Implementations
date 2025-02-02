@@ -53,7 +53,7 @@ Training benefits from parallel approach, but when it comes to inference applyin
 
  2. When we discretize the equations, a matrix exponential appears computing which is expensive and leads to high time complexity. If the step size changes, then we would need to recompute this matrix exponential making it inefficient for training.
 
-### Introducing Structured State Space Models (S4)
+## Introducing Structured State Space Models (S4)
 
 Structured State Space for Sequences (S4), is a class of SSMs that can efficiently handle long sequences. It addresses both the issues of forgetting long-range dependencies and being computationally inefficient for long sequences.
 
